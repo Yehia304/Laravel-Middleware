@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,10 +29,22 @@ Route::get('/admin/user/roles',[
 
     return 'Middleware';
 
-
-
     }
 
 
 
 ]);
+
+Route::get('/role',function (){
+
+    $user = Auth::user();
+
+//    return $user->roles->name;
+
+    if($user->isAdmin()){
+        echo 'This is an administrator';
+    }
+
+
+
+});
