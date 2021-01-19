@@ -35,16 +35,4 @@ Route::get('/admin/user/roles',[
 
 ]);
 
-Route::get('/role',function (){
-
-    $user = Auth::user();
-
-//    return $user->roles->name;
-
-    if($user->isAdmin()){
-        echo 'This is an administrator';
-    }
-
-
-
-});
+Route::get('/role','App\Http\Controllers\AdminController@index');
