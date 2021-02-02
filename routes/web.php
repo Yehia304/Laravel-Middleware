@@ -36,3 +36,7 @@ Route::get('/admin/user/roles',[
 ]);
 
 Route::get('/role','App\Http\Controllers\AdminController@index');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
