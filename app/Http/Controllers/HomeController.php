@@ -28,6 +28,8 @@ class HomeController extends Controller
         session(['Merna'=>'Perfect1']);
         session()->forget('Merna');
 
+        session()->flash('Message','HaHa');
+
      return $request->session()->all();
 
         //return view('home');
