@@ -25,7 +25,10 @@ class HomeController extends Controller
     {
        // $request->session()->put(['Yehia'=>'Perfect']);
 
-     return $request->session()->get('Yehia');
+        session(['Merna'=>'Perfect1']);
+        session()->forget('Merna');
+
+     return $request->session()->all();
 
         //return view('home');
     }
